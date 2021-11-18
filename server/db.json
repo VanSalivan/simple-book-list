@@ -1,0 +1,34 @@
+{
+  "books": [
+    {
+      "id": "ukjXyUuM",
+      "title": "The Elements of Programming Style",
+      "author": "Brian W. Kernighan and Phillip J. Plauger"
+    },
+    {
+      "id": "d5fE_asdsdddz",
+      "title": "The New Turing++",
+      "author": "Alexander K. Dewdney"
+    },
+    {
+      "id": "d5fE_asdsddddz1",
+      "title": "The New Turing++",
+      "author": "Alexander K. Dewdney"
+    },
+    {
+      "id": "d5fE_asdsdd2ddz1",
+      "title": "The New Turing++",
+      "author": "Alexander K. Dewdney"
+    },
+    {
+      "id": "d5fE_asdsdd",
+      "title": "Учебник по JavaScript",
+      "author": "Alexander"
+    },
+    {
+      "id": "d5fE_asdsdd2",
+      "title": "Учебник по C#",
+      "author": "Не Alexander"
+    }
+  ]
+}
