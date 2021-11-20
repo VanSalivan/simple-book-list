@@ -12,9 +12,7 @@ export const BookItem = ({ author, title, id }) => {
 
   const remove = async () => {
     await mutateAsync(id);
-    console.log(queryClient);
     queryClient.invalidateQueries('books');
-    console.log(queryClient);
   };
 
   return (

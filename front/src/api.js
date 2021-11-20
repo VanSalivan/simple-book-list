@@ -6,7 +6,35 @@ export const getAllBooks = async () => {
   }
 
   return response.json()
-}
+};
+
+export const getBook = async ({ queryKey }) => {
+  // eslint-disable-next-line no-unused-vars
+  const [_key, { id }] = queryKey;
+  const response = await fetch(`${process.env.REACT_APP_API_SERVER}/books/${id}`);
+
+  if (!response.ok) {
+    throw new Error(response.json().message)
+  }
+
+  return response.json();
+};
+
+export const updateBook = async ({ id, ...data }) => {
+  const response = await fetch(`${process.env.REACT_APP_API_SERVER}/books/${id}`,
+    {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(response.json().message)
+  }
+
+  return response.json();
+};
 
 export const removeBook = async (id) => {
   const response = await fetch(`${process.env.REACT_APP_API_SERVER}/books/${id}`, {
@@ -18,4 +46,4 @@ export const removeBook = async (id) => {
   }
 
   return;
-}
+};
