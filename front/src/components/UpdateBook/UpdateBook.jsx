@@ -1,13 +1,13 @@
 import React from 'react';
 import { useMutation, useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router';
-import { Box, Flex, Heading } from 'rebass';
+import { Box, Flex, Heading, Button } from 'rebass';
 import Loader from 'react-loader-spinner';
 
-import { BookForm } from '../../shared/BookForm';
+import { BookForm } from '../../shared';
 import { getBook, updateBook } from '../../api';
 
-const UpdateBook = () => {
+export const UpdateBook = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { data, error, isLoading, isError } = useQuery(
@@ -16,6 +16,7 @@ const UpdateBook = () => {
   );
   const { mutateAsync, isLoading: isMutating } = useMutation(updateBook);
 
+  const goBack = () => navigate('/');
   const onFormSubmit = async (data) => {
     await mutateAsync({ ...data, id });
     navigate('/');
@@ -45,8 +46,12 @@ const UpdateBook = () => {
         onFormSubmit={onFormSubmit}
         isLoading={isMutating}
       />
+      <Button
+        onClick={goBack}
+        sx={{ marginTop: 2, backgroundColor: 'black', width: '86px' }}
+      >
+        Cancel
+      </Button>
     </Box>
   );
 };
-
-export { UpdateBook };
